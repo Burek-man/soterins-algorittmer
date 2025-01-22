@@ -3,3 +3,13 @@ C:\Users\Admin\Documents\GitHub\soterins-algorittmer\obj\Debug\net8.0\soterins-a
 C:\Users\Admin\Documents\GitHub\soterins-algorittmer\obj\Debug\net8.0\soterins-algorittmer.AssemblyInfo.cs
 C:\Users\Admin\Documents\GitHub\soterins-algorittmer\obj\Debug\net8.0\soterins-algorittmer.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\soterins-algorittmer\obj\Debug\net8.0\soterins-algorittmer.sourcelink.json
+C:\Users\Admin\Documents\GitHub\soterins-algorittmer\bin\Debug\net8.0\soterins-algorittmer.exe
+C:\Users\Admin\Documents\GitHub\soterins-algorittmer\bin\Debug\net8.0\soterins-algorittmer.deps.json
+C:\Users\Admin\Documents\GitHub\soterins-algorittmer\bin\Debug\net8.0\soterins-algorittmer.runtimeconfig.json
+C:\Users\Admin\Documents\GitHub\soterins-algorittmer\bin\Debug\net8.0\soterins-algorittmer.dll
+C:\Users\Admin\Documents\GitHub\soterins-algorittmer\bin\Debug\net8.0\soterins-algorittmer.pdb
+C:\Users\Admin\Documents\GitHub\soterins-algorittmer\obj\Debug\net8.0\soterins-algorittmer.dll
+C:\Users\Admin\Documents\GitHub\soterins-algorittmer\obj\Debug\net8.0\refint\soterins-algorittmer.dll
+C:\Users\Admin\Documents\GitHub\soterins-algorittmer\obj\Debug\net8.0\soterins-algorittmer.pdb
+C:\Users\Admin\Documents\GitHub\soterins-algorittmer\obj\Debug\net8.0\soterins-algorittmer.genruntimeconfig.cache
+C:\Users\Admin\Documents\GitHub\soterins-algorittmer\obj\Debug\net8.0\ref\soterins-algorittmer.dll

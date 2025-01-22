@@ -1,73 +1,137 @@
-﻿/*
-static void Main(string[])
+﻿﻿using System.Diagnostics;
+ Stopwatch stopwatch = new Stopwatch();
+stopwatch.Start();
+List<int> tal = new List<int>();
+Random random = new Random();
+
+for(int i = 0; i < 100_00; i++){
+    tal.Add(random.Next());
+}
+stopwatch.Stop();
+stopwatch.Reset();
+List<int> bubble = new List<int>(tal);
+stopwatch.Start();
+
+SelectionSort(bubble);
+
+stopwatch.Stop();
+
+Console.WriteLine($"Tiden för loopen att köra selecionsort: {stopwatch.Elapsed.TotalMilliseconds} ms");
+List<int> merge = new List<int>(tal);
+stopwatch.Restart();
+MergeSort(tal);
+stopwatch.Stop();    
+Console.WriteLine($"Tiden för loopen att köra Mergesort: {stopwatch.Elapsed.TotalMilliseconds} ms");
+List<int> bubble1 = new List<int>(tal);
+stopwatch.Restart();
+MergeSort(tal);
+stopwatch.Stop();    
+Console.WriteLine($"Tiden för loopen att köra bulllesort: {stopwatch.Elapsed.TotalMilliseconds} ms");
+List<int> quick = new List<int>(tal);
+stopwatch.Restart();
+MergeSort(tal);
+stopwatch.Stop();    
+Console.WriteLine($"Tiden för loopen att köra quicksort: {stopwatch.Elapsed.TotalMilliseconds} ms");
+
+
+
+
+void BubbleSort(List<int> bubble){
+    for(int i=0; i<bubble.Count; i++){
+        for(int j=0; j<bubble.Count-1-i; j++){
+            if(bubble[j]>bubble[j+1]){
+                int swap= bubble[j];
+                bubble[j]=bubble[j+1];
+                bubble[j+1]=swap;
+            }
+        }
+    }
+} 
+
+
+void SelectionSort(List<int> list)
 {
-
-    int[] sizes = {10, 100, 1000, 10000, 100000};
-    Random random = new Random();
-    Console.WriteLine("tid");
-}
-*/
-
-/*
-using System.Numerics;
-
-void bubbleSort(Vector<int>& arr) {
-    int n =  arr.size();
-    bool swapped;
-
-    for(int i = 0; i < n - 1; i++){
-        swapped = false;
-        for (int j = 0; j < n - 1; j++){
-            if(arr[j] > arr[j + 1]) {
-                swap(arr[j], arr[j + 1]);
-                swapped = true;
+    int n = list.Count;
+    for (int i = 0; i < n - 1; i++)
+    {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (list[j] < list[minIndex])
+            {
+                minIndex = j;
             }
         }
-
-
-        if (!swapped)
-            break;
+        int temp = list[minIndex];
+        list[minIndex] = list[i];
+        list[i] = temp;
     }
 }
 
-void printVector(const Vector<int>& arr) {
-    for (int num : arr)
-        cout << "" << num;
+ void MergeSort(List<int> list)
+{
+    if (list.Count <= 1)
+        return;
+
+    int mid = list.Count / 2;
+    List<int> left = list.GetRange(0, mid);
+    List<int> right = list.GetRange(mid, list.Count - mid);
+
+    MergeSort(left);
+    MergeSort(right);
+    Merge(list, left, right);
 }
 
-int Main()
-*/
-
-static void bubbleSort ( int [] arr, int n){
-    int i, j, temp;
-    bool swapped;
-    for (i=0; i< n - 1; i++){
-        swapped= false;
-        for (j=0; j< n - i - 1; j++){
-            if(arr[j]> arr[j + 1]){
-
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-                swapped = true;
-            }
+void Merge(List<int> list, List<int> left, List<int> right)
+{
+    int i = 0, j = 0, k = 0;
+    while (i < left.Count && j < right.Count)
+    {
+        if (left[i] <= right[j])
+        {
+            list[k++] = left[i++];
         }
-        if (swapped == false)
-            break;
+        else
+        {
+            list[k++] = right[j++];
+        }
+    }
+    while (i < left.Count)
+    {
+        list[k++] = left[i++];
+    }
+    while (j < right.Count)
+    {
+        list[k++] = right[j++];
     }
 }
 
- static void printArray(int[] arr, int size){
-        int i;
-        for (i = 0; i < size; i++)
-            Console.Write(arr[i] + " ");
-        Console.WriteLine();
+ void QuickSort(List<int> list, int low, int high)
+{
+    if (low < high)
+    {
+        int pi = Partition(list, low, high);
+        QuickSort(list, low, pi - 1);
+        QuickSort(list, pi + 1, high);
     }
+}
 
-  public static void Main(){
-        int[] arr = { 64, 34, 25, 12, 22, 11, 90 };
-        int n = arr.Length;
-        bubbleSort(arr, n);
-        Console.WriteLine("Sorted array:");
-        printArray(arr, n);
+ int Partition(List<int> list, int low, int high)
+{
+    int pivot = list[high];
+    int i = (low - 1);
+    for (int j = low; j < high; j++)
+    {
+        if (list[j] < pivot)
+        {
+            i++;
+            int temp = list[i];
+            list[i] = list[j];
+            list[j] = temp;
+        }
     }
+    int swapTemp = list[i + 1];
+    list[i + 1] = list[high];
+    list[high] = swapTemp;
+    return i + 1;
+}

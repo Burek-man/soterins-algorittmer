@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("soterins-algorittmer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb3d01c4552df722907f6d9cb7008be91243360a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3f06beff41097df724d1c5848579c46ae7d9742")]
 [assembly: System.Reflection.AssemblyProductAttribute("soterins-algorittmer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("soterins-algorittmer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
