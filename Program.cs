@@ -7,29 +7,28 @@ Random random = new Random();
 for(int i = 0; i < 100_00; i++){
     tal.Add(random.Next());
 }
-stopwatch.Stop();
-stopwatch.Reset();
-List<int> bubble = new List<int>(tal);
+
+List<int> selection = new List<int>(tal);
 stopwatch.Start();
 
-SelectionSort(bubble);
+SelectionSort(selection);
 
 stopwatch.Stop();
 
 Console.WriteLine($"Tiden för loopen att köra selecionsort: {stopwatch.Elapsed.TotalMilliseconds} ms");
-List<int> merge = new List<int>(tal);
+List<int> bubble = new List<int>(tal);
 stopwatch.Restart();
-MergeSort(tal);
+BubbleSort(bubble);
 stopwatch.Stop();    
 Console.WriteLine($"Tiden för loopen att köra Mergesort: {stopwatch.Elapsed.TotalMilliseconds} ms");
-List<int> bubble1 = new List<int>(tal);
-stopwatch.Restart();
-MergeSort(tal);
-stopwatch.Stop();    
-Console.WriteLine($"Tiden för loopen att köra bulllesort: {stopwatch.Elapsed.TotalMilliseconds} ms");
 List<int> quick = new List<int>(tal);
 stopwatch.Restart();
-MergeSort(tal);
+QuickSort(quick,0,quick.Count-1);
+stopwatch.Stop();    
+Console.WriteLine($"Tiden för loopen att köra bulllesort: {stopwatch.Elapsed.TotalMilliseconds} ms");
+List<int> merge = new List<int>(tal);
+stopwatch.Restart();
+MergeSort(merge);
 stopwatch.Stop();    
 Console.WriteLine($"Tiden för loopen att köra quicksort: {stopwatch.Elapsed.TotalMilliseconds} ms");
 
